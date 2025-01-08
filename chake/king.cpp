@@ -11,10 +11,26 @@ king::~king()
 {
 
 }
-bool king::movement(int move_from, int move_to, piece* borde)
+bool king::movement(int move_from, int move_to, piece* board[8][8])
 {
-	return true;
-	//good luck
+    int col_from = move_from / 10; // up down
+    int row_from = move_from % 10; // left right
+    int col_to = move_to / 10;     // up down
+    int row_to = move_to % 10;     // left right
+    int col_diff = col_to - col_from;
+    int row_diff = row_to - row_from;
+
+    if ((col_diff == 1 || col_diff == 0 || col_diff == -1) &&
+        (row_diff == 1 || row_diff == 0 || row_diff == -1) &&
+        !(col_diff == 0 && row_diff == 0)) 
+    {
+        if (board[row_to][col_to] != nullptr && board[row_to][col_to]->get_color() == this->color) 
+        {
+            return false; 
+        }
+        return true; 
+    }
+    return false; 
 }
 void king::set_check()
 {
