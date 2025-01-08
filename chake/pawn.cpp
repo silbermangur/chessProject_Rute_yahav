@@ -11,7 +11,7 @@ pawn::~pawn()
 {
 
 }
-bool pawn::movement(piece* bord, int new_pose)
+bool pawn::movement(std::string bord)
 {
 	return true;
 	//good luck
@@ -42,18 +42,4 @@ void pawn::set_type()
 char pawn::get_type() const
 {
 	return this->type;
-}
-
-int  pawn::get_positon() const
-{
-
-	return this->positon;
-
-}
-
-void pawn::set_positon(int pose)
-{
-
-	this->positon = pose;
-
 }

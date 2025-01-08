@@ -10,7 +10,7 @@ bishop::~bishop()
 {
 
 }
-bool bishop::movement(piece* bord, int new_pose)
+bool bishop::movement(std::string bord)
 {
 	return true;
 	//good luck
@@ -42,18 +42,4 @@ void bishop::set_type()
 char bishop::get_type() const
 {
 	return this->type;
-}
-
-int  bishop::get_positon() const
-{
-
-	return this->positon;
-
-}
-
-void bishop::set_positon(int pose)
-{
-
-	this->positon = pose;
-
 }

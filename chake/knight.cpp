@@ -11,7 +11,7 @@ knight::~knight()
 {
 
 }
-bool knight::movement(piece* bord, int new_pose)
+bool knight::movement(std::string bord)
 {
 	return true;
 	//good luck
@@ -43,18 +43,4 @@ void knight::set_type()
 char knight::get_type() const
 {
 	return this->type;
-}
-
-int  knight::get_positon() const
-{
-
-	return this->positon;
-
-}
-
-void knight::set_positon(int pose)
-{
-
-	this->positon = pose;
-
 }
