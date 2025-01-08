@@ -11,9 +11,9 @@ rook::~rook()
 {
 
 }
-bool rook::movement(std::string move_from, int move_to, piece* borde)
+bool rook::movement(int move_from, int move_to, piece* borde)
 {
-
+	if()
 	return true;
 }
 void rook::set_check()

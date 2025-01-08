@@ -11,7 +11,7 @@ king::~king()
 {
 
 }
-bool king::movement(std::string move_from, int move_to, piece* borde)
+bool king::movement(int move_from, int move_to, piece* borde)
 {
 	return true;
 	//good luck

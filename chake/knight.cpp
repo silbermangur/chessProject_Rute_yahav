@@ -11,7 +11,7 @@ knight::~knight()
 {
 
 }
-bool knight::movement(std::string move_from, int move_to, piece* borde)
+bool knight::movement(int move_from, int move_to, piece* borde)
 {
 	return true;
 	//good luck

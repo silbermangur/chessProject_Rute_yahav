@@ -7,7 +7,7 @@ class rook : public piece
 public:
 	rook(char color);
 	~rook();
-	bool movement(std::string move_from, int move_to, piece* borde) override;
+	bool movement(int move_from, int move_to, piece* borde) override;
 	void set_check() override;
 	bool get_check() override;
 	char get_color() const override;
