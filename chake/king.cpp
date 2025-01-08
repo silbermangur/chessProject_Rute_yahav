@@ -11,7 +11,7 @@ king::~king()
 {
 
 }
-bool king::movement(std::string bord)
+bool king::movement(piece* bord, int new_pose)
 {
 	return true;
 	//good luck
@@ -43,4 +43,18 @@ void king::set_type()
 char king::get_type() const
 {
 	return this->type;
+}
+
+int  king::get_positon() const
+{
+
+	return this->positon;
+
+}
+
+void king::set_positon(int pose)
+{
+
+	this->positon = pose;
+
 }

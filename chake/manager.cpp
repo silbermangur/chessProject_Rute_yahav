@@ -7,6 +7,7 @@
 
 manager::manager()
 {
+
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
@@ -38,6 +39,7 @@ manager::manager()
 
     board[0][3] = new king('w');
     board[7][3] = new king('b');
+
 
 }
 
