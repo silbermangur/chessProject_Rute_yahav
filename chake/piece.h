@@ -6,7 +6,7 @@ class piece
 {
 public:
 
-	virtual bool movement(std::string bord) = 0;
+	virtual bool movement(std::string move_from, int move_to, piece* borde) = 0;
 	virtual void set_check() = 0;
 	virtual bool get_check() = 0;
 	//the color is picked in the constructor so no need to set it manually

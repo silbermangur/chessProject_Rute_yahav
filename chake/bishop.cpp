@@ -10,7 +10,7 @@ bishop::~bishop()
 {
 
 }
-bool bishop::movement(std::string bord)
+bool bishop::movement(std::string move_from, int move_to, piece* borde)
 {
 	return true;
 	//good luck
