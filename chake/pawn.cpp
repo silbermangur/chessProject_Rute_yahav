@@ -11,7 +11,7 @@ pawn::~pawn()
 {
 
 }
-bool pawn::movement(int move_from, int move_to, piece* borde)
+bool pawn::movement(int move_from, int move_to, piece* board[8][8])
 {
 	return true;
 	//good luck
