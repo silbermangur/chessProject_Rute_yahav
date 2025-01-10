@@ -41,6 +41,9 @@ manager::manager()
 
     delete board[1][3];
     board[1][3] = nullptr;
+
+    delete board[6][0];
+    board[6][0] = nullptr;
 }
 
 manager::~manager()
@@ -97,6 +100,12 @@ void manager::play()
 
     //here you can check if the func works :)
     check = board[0][2]->movement(02, 13, board); //now checking the bishop
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    check = board[7][0]->movement(70,10, board);
     if (check == false)
     {
         printf("invalid movement");
