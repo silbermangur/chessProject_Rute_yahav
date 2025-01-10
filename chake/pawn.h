@@ -7,7 +7,7 @@ class pawn : public piece
 public:
 	pawn(char color);
 	~pawn();
-	bool movement(int move_from, int move_to, piece* board[8][8]) override;
+	bool movement(int move_from, int move_to, piece* (&board)[8][8]) override;
 	void set_check() override;
 	bool get_check() override;
 	char get_color() const override;

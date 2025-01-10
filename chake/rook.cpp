@@ -11,7 +11,7 @@ rook::~rook()
 {
 
 }
-bool rook::movement(int move_from, int move_to, piece* board[8][8])
+bool rook::movement(int move_from, int move_to, piece* (&board)[8][8])
 {
 	if ((move_from / 10 != move_to / 10 && move_from % 10 == move_to % 10) || (move_from / 10 == move_to / 10 && move_from % 10 != move_to % 10) // if move in a lein
 		&& board[move_to % 10][move_to / 10] != nullptr)
