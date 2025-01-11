@@ -42,7 +42,13 @@ bool pawn::movement(int move_from, int move_to, piece* (&board)[8][8])
 		((((row_from + move) == row_to) && (col_from + 1 == col_to || col_from - 1 == col_to)) && board[row_to][col_to] != nullptr && board[row_to][col_to]->get_color() != this->get_color()) // chake if its tring to eat ander piece
 		)
 	{
-		
+		if (board[row_to][col_to] != nullptr && board[row_to][col_to]->get_color() != this->get_color())
+		{
+			delete board[row_to][col_to];
+			printf("\nkilled!\n");
+			board[row_to][col_to] = nullptr;
+		}
+
 		if (!this->get_move())
 		{
 

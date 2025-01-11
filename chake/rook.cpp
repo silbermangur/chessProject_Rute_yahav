@@ -54,17 +54,10 @@ bool rook::movement(int move_from, int move_to, piece* (&board)[8][8])
 
 		}
 
-
-
-		
-
 	}
 	
-	
-
 	return false;
 
-	
 }
 
 bool rook::cal_move(int diff,int from, int to, bool fixed, piece* (&board)[8][8])
@@ -103,14 +96,17 @@ bool rook::cal_move(int diff,int from, int to, bool fixed, piece* (&board)[8][8]
 
 		if (board[fixed][to] != nullptr)
 		{
-
-			if (board[fixed][to]->get_color() == this->get_color())
+			if (board[fixed][to]->get_color() == this->color)
 			{
-
-				return false;
-
+				return false; 
 			}
-
+			else
+			{
+				delete board[fixed][to]; 
+				printf("\nkilled!\n");
+				board[fixed][to] = nullptr; 
+				
+			}
 		}
 
 	}
@@ -131,14 +127,17 @@ bool rook::cal_move(int diff,int from, int to, bool fixed, piece* (&board)[8][8]
 
 		if (board[to][fixed] != nullptr)
 		{
-
-			if (board[to][fixed]->get_color() == this->get_color())
+			if (board[to][fixed]->get_color() == this->color)
 			{
-
-				return false;
-
+				return false; // Cannot move to a square occupied by your own piece
 			}
-
+			else
+			{
+				delete board[to][fixed]; // Capture and delete the opponent's piece
+				printf("\nkilled!\n");
+				board[to][fixed] = nullptr; // Clear the destination square
+				
+			}
 		}
 
 	}

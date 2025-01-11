@@ -5,7 +5,7 @@ class bishop : public piece
 {
 public:
 	bishop(char color);
-	~bishop();
+	virtual ~bishop();
 	bool movement(int move_from, int move_to, piece* (&board)[8][8]) override;
 	void set_check() override;
 	bool get_check() override;

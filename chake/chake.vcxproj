@@ -133,6 +133,7 @@
     <ClCompile Include="knight.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="pawn.cpp" />
+    <ClCompile Include="queen.cpp" />
     <ClCompile Include="rook.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="manager.h" />
     <ClInclude Include="pawn.h" />
     <ClInclude Include="piece.h" />
+    <ClInclude Include="queen.h" />
     <ClInclude Include="rook.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

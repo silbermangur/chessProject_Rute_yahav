@@ -4,6 +4,7 @@
 #include "knight.h"
 #include "bishop.h"
 #include "pawn.h"
+#include "queen.h"
 
 manager::manager()
 {
@@ -38,6 +39,11 @@ manager::manager()
 
     board[0][3] = new king('w');
     board[7][3] = new king('b');
+
+    board[0][4] = new queen('w');
+    board[7][4] = new queen('b');
+
+   
 
 }
 
@@ -101,6 +107,9 @@ void manager::play()
         printf("invalid movement");
     }
 
+    printf("\n\n");
+    this->showBoard();
+
     check = board[6][0]->movement(60,40, board);
     if (check == false)
     {
@@ -110,28 +119,7 @@ void manager::play()
     printf("\n\n");
     this->showBoard();
 
-    check = board[0][2]->movement(02, 13, board); //now checking the bishop
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    check = board[1][3]->movement(13, 31, board); //now checking the bishop
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    check = board[7][0]->movement(70,50, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    printf("\n\n");
-    this->showBoard();
-
-    check = board[4][0]->movement(40, 31, board);
+    check = board[0][4]->movement(04, 40, board);
     if (check == false)
     {
         printf("invalid movement");
@@ -139,4 +127,17 @@ void manager::play()
     
     printf("\n\n");
     this->showBoard();
+
+
+
+    check = board[7][0]->movement(70, 50, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    printf("\n\n");
+    this->showBoard();
+
+    
 }

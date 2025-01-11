@@ -6,7 +6,7 @@ class rook : public piece
 {
 public:
 	rook(char color);
-	~rook();
+	virtual ~rook();
 	bool movement(int move_from, int move_to, piece* (&board)[8][8]) override;
 	void set_check() override;
 	bool get_check() override;

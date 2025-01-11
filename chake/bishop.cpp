@@ -6,9 +6,9 @@ bishop::bishop(char color) : piece()
 	this->check = false;
 	this->set_type();
 }
-bishop::~bishop()
+bishop::~bishop() 
 {
-
+    
 }
 bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
 {
@@ -19,15 +19,15 @@ bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
 
     int row_diff = row_to - row_from; 
     int col_diff = col_to - col_from; 
-
+    int row_step = 0;
+    int col_step = 0;
   
-    if ((row_diff == col_diff || row_diff == -col_diff) == false)
+    if ((row_diff == col_diff || row_diff == - col_diff) == false)
     {
         return false; 
     }
 
     
-    int row_step = 0;
     if (row_diff > 0) 
     {
         row_step = 1; 
@@ -36,8 +36,7 @@ bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
     {
         row_step = -1;
     }
-
-    int col_step = 0;
+    
     if (col_diff > 0) 
     {
         col_step = 1; 
@@ -47,22 +46,36 @@ bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
         col_step = -1; 
     }
 
-
     int row = row_from + row_step;
     int col = col_from + col_step;
-    while (row != row_to && col != col_to) 
+
+    while (true)
     {
+        if (row == row_to && col == col_to)
+        {
+            if (board[row][col] != nullptr)
+            {
+                if (board[row][col]->get_color() == this->color)
+                {
+                    return false; 
+                }
+                else
+                {
+                    delete board[row][col]; 
+                    printf("\nkilled!\n");
+                    board[row][col] = nullptr; 
+                }
+            }
+            break; 
+        }
+
         if (board[row][col] != nullptr)
         {
             return false; 
         }
+
         row += row_step;
         col += col_step;
-    }
-
-    if (board[row_to][col_to] != nullptr && board[row_to][col_to]->get_color() == this->color)
-    {
-        return false; 
     }
 
     board[row_to][col_to] = board[row_from][col_from]; 
@@ -76,6 +89,7 @@ void bishop::set_check()
 {
 	//good luck
 }
+
 bool bishop::get_check()
 {
 	return this->check;
