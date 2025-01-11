@@ -39,11 +39,6 @@ manager::manager()
     board[0][3] = new king('w');
     board[7][3] = new king('b');
 
-    delete board[1][3];
-    board[1][3] = nullptr;
-
-    delete board[6][0];
-    board[6][0] = nullptr;
 }
 
 manager::~manager()
@@ -99,13 +94,44 @@ void manager::play()
     this->showBoard();
 
     //here you can check if the func works :)
+
+    check = board[1][3]->movement(13, 23, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    check = board[6][0]->movement(60,40, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    printf("\n\n");
+    this->showBoard();
+
     check = board[0][2]->movement(02, 13, board); //now checking the bishop
     if (check == false)
     {
         printf("invalid movement");
     }
 
-    check = board[7][0]->movement(70,10, board);
+    check = board[1][3]->movement(13, 31, board); //now checking the bishop
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    check = board[7][0]->movement(70,50, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
+    printf("\n\n");
+    this->showBoard();
+
+    check = board[4][0]->movement(40, 31, board);
     if (check == false)
     {
         printf("invalid movement");
