@@ -13,7 +13,8 @@ public:
 	char get_color() const override;
 	void set_type() override;
 	char get_type() const override;
-	bool cal_move(int diff, int from, int to, bool fixed, piece* (&board)[8][8]);
+	bool eat(int col_from, int row_from, int col_to, int row_to, piece* (&board)[8][8]);
+	void move(int col_from, int row_from, int col_to, int row_to, piece* (&board)[8][8]);
 
 private:
 	char color;

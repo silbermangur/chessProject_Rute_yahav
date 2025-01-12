@@ -136,8 +136,15 @@ void manager::play()
         printf("invalid movement");
     }
 
+    
+
+    check = board[5][0]->movement(50, 40, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+    
     printf("\n\n");
     this->showBoard();
 
-    
 }
