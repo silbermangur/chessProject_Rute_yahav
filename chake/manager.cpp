@@ -138,12 +138,21 @@ void manager::play()
 
     
 
-    check = board[5][0]->movement(50, 40, board);
+    check = board[7][1]->movement(71, 52, board);
     if (check == false)
     {
         printf("invalid movement");
     }
     
+    printf("\n\n");
+    this->showBoard();
+
+    check = board[5][2]->movement(52, 40, board);
+    if (check == false)
+    {
+        printf("invalid movement");
+    }
+
     printf("\n\n");
     this->showBoard();
 
