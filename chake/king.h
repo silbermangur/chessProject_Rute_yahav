@@ -7,7 +7,7 @@ public:
 	king(char color);
 	~king();
 	bool movement(int move_from, int move_to, piece* (&board)[8][8]) override;
-	void set_check() override;
+	void set_check(piece* (&board)[8][8]) override;
 	bool get_check() override;
 	char get_color() const override;
 	void set_type() override;

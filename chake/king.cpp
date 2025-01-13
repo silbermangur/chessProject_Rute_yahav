@@ -49,9 +49,28 @@ bool king::movement(int move_from, int move_to, piece* (&board)[8][8])
 }
 
 
-void king::set_check()
+void king::set_check(piece* (&board)[8][8])
 {
-	//good luck
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < 2; i++)
+    {
+
+        for (j = 0; j < 3; j++)
+        {
+
+            if (board[i][j] == nullptr)
+            {
+
+
+
+            }
+
+        }
+
+    }
+
 }
 bool king::get_check()
 {

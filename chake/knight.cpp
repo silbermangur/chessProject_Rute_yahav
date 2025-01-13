@@ -38,7 +38,7 @@ bool knight::movement(int move_from, int move_to, piece* (&board)[8][8])
 
 	return false;
 }
-void knight::set_check()
+void knight::set_check(piece* (&board)[8][8])
 {
 	//good luck
 }

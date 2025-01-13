@@ -80,7 +80,7 @@ bool pawn::get_move() const
 
 }
 
-void pawn::set_check()
+void pawn::set_check(piece* (&board)[8][8])
 {
 	//good luck
 }

@@ -29,7 +29,7 @@ bool queen::movement(int move_from, int move_to, piece* (&board)[8][8])
 	return false; 
 }
 
-void queen::set_check()
+void queen::set_check(piece* (&board)[8][8])
 {
 
 }

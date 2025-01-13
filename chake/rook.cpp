@@ -138,7 +138,7 @@ void rook::move(int col_from, int row_from, int col_to, int row_to, piece* (&boa
 
 }
 
-void rook::set_check()
+void rook::set_check(piece* (&board)[8][8])
 {
 	//good luck
 }
