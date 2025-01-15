@@ -34,7 +34,7 @@ bool king::movement(int move_from, int move_to, piece* (&board)[8][8])
             else
             {
                 delete board[row_to][col_to]; 
-                printf("\nkilled!\n");
+                std::cout << "\nkilled!" << std::endl;
                 board[row_to][col_to] = nullptr;
             }
         }
@@ -49,28 +49,9 @@ bool king::movement(int move_from, int move_to, piece* (&board)[8][8])
 }
 
 
-void king::set_check(piece* (&board)[8][8])
+void king::set_check()
 {
-    int i = 0;
-    int j = 0;
-
-    for (i = 0; i < 2; i++)
-    {
-
-        for (j = 0; j < 3; j++)
-        {
-
-            if (board[i][j] == nullptr)
-            {
-
-
-
-            }
-
-        }
-
-    }
-
+	// not finished
 }
 bool king::get_check()
 {

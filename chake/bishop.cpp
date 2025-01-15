@@ -62,7 +62,8 @@ bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
                 else
                 {
                     delete board[row][col]; 
-                    printf("\nkilled!\n");
+                    std::cout << "\nkilled!" << std::endl;
+
                     board[row][col] = nullptr; 
                 }
             }
@@ -85,9 +86,9 @@ bool bishop::movement(int move_from, int move_to, piece* (&board)[8][8])
 }
 
 
-void bishop::set_check(piece* (&board)[8][8])
+void bishop::set_check()
 {
-	//good luck
+    // not finished
 }
 
 bool bishop::get_check()

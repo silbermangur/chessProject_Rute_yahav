@@ -119,7 +119,9 @@ bool rook::eat(int col_from, int row_from, int col_to, int row_to, piece* (&boar
 	}
 	else
 	{
-		
+		delete board[row_to][col_to];
+		board[row_to][col_to] = nullptr;
+		std::cout << "\nkilled!" << std::endl;
 		move(col_from, row_from, col_to, row_to, board);
 
 	}
@@ -131,16 +133,15 @@ bool rook::eat(int col_from, int row_from, int col_to, int row_to, piece* (&boar
 void rook::move(int col_from, int row_from, int col_to, int row_to, piece* (&board)[8][8])
 {
 
-	delete board[row_to][col_to];
-	printf("\nkilled!\n");
+	
 	board[row_to][col_to] = board[row_from][col_from];
 	board[row_from][col_from] = nullptr;
 
 }
 
-void rook::set_check(piece* (&board)[8][8])
+void rook::set_check()
 {
-	//good luck
+	// not finished
 }
 bool rook::get_check()
 {

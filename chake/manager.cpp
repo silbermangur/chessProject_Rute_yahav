@@ -62,17 +62,25 @@ manager::~manager()
 }
 
 
-void manager::showBoard()
+void manager::showBoard() 
 {
-    for (int i = 0; i < 8; i++)
+    std::cout << "  ";
+    for (int j = 0; j < 8; j++) 
     {
-        for (int j = 0; j < 8; j++)
+        std::cout << j << " ";
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i < 8; i++) 
+    {
+        std::cout << i << " ";
+        for (int j = 0; j < 8; j++) 
         {
-            if (board[i][j] == nullptr)
+            if (board[i][j] == nullptr) 
             {
-                std::cout << "# "; 
+                std::cout << "# ";
             }
-            else
+            else 
             {
                 std::cout << board[i][j]->get_type() << " ";
             }
@@ -96,64 +104,76 @@ void manager::setCode()
 }
 void manager::play()
 {
+    
     bool check = false;
+    bool validInput = false;
+    int from = 0;
+    int to = 0;
+    char answer = ' ';
+    bool keepGoing = true;
+
     this->showBoard();
 
-    //here you can check if the func works :)
-
-    check = board[1][3]->movement(13, 23, board);
-    if (check == false)
+    while (keepGoing)
     {
-        printf("invalid movement");
+        validInput = false; // Reset validInput for each iteration
+
+        while (!validInput)
+        {
+            std::cout << "\nenter the start position: ";
+            std::cin >> from;
+
+            if (from < 0 || from > 77) // Validate input is within range
+            {
+                std::cout << "\ninvalid position" << std::endl;
+                continue;
+            }
+
+            if (board[from / 10][from % 10] == nullptr)
+            {
+                std::cout << "\ninvalid movement" << std::endl;
+            }
+            else
+            {
+                validInput = true;
+            }
+        }
+
+        std::cout << "\nenter the end position: ";
+        std::cin >> to;
+
+        if (to < 0 || to > 77) 
+        {
+            std::cout << "\ninvalid position" << std::endl;
+            continue;
+        }
+
+        check = board[from / 10][from % 10]->movement(from, to, board);
+        if (check == false)
+        {
+            std::cout << "\ninvalid movement" << std::endl;
+        }
+        else
+        {
+            std::cout << "\n" << std::endl;
+            this->showBoard();
+        }
+
+        std::cout << "\ncontinue? Y/N ";
+        std::cin >> answer;
+        if (answer == 'Y' || answer == 'y')
+        {
+            keepGoing = true;
+        }
+        else if (answer == 'N' || answer == 'n')
+        {
+            keepGoing = false;
+        }
+        else
+        {
+            std::cout << "\nInvalid input. Exiting." << std::endl;
+            keepGoing = false;
+        }
     }
 
-    printf("\n\n");
-    this->showBoard();
-
-    check = board[6][0]->movement(60,40, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    printf("\n\n");
-    this->showBoard();
-
-    check = board[0][4]->movement(04, 40, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-    
-    printf("\n\n");
-    this->showBoard();
-
-
-
-    check = board[7][0]->movement(70, 50, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    
-
-    check = board[7][1]->movement(71, 52, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-    
-    printf("\n\n");
-    this->showBoard();
-
-    check = board[5][2]->movement(52, 40, board);
-    if (check == false)
-    {
-        printf("invalid movement");
-    }
-
-    printf("\n\n");
-    this->showBoard();
-
-}
+}   

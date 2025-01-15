@@ -7,7 +7,7 @@ public:
 	knight(char color);
 	~knight();
 	bool movement(int move_from, int move_to, piece* (&board)[8][8]) override;
-	void set_check(piece* (&board)[8][8]) override;
+	void set_check() override;
 	bool get_check() override;
 	char get_color() const override;
 	void set_type() override;

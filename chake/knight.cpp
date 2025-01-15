@@ -26,7 +26,7 @@ bool knight::movement(int move_from, int move_to, piece* (&board)[8][8])
 		if (board[row_to][col_to] != nullptr && board[row_to][col_to]->get_color() != this->get_color())
 		{
 			delete board[row_to][col_to];
-			printf("\nkilled!\n");
+			std::cout << "\nkilled!" << std::endl;
 			board[row_to][col_to] = nullptr;
 		}
 
@@ -38,7 +38,7 @@ bool knight::movement(int move_from, int move_to, piece* (&board)[8][8])
 
 	return false;
 }
-void knight::set_check(piece* (&board)[8][8])
+void knight::set_check()
 {
 	//good luck
 }

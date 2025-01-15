@@ -27,7 +27,7 @@ bool queen::movement(int move_from, int move_to, piece* (&board)[8][8])
     return false;
 }
 
-void queen::set_check(piece* (&board)[8][8])
+void queen::set_check()
 {
 
 }
@@ -163,7 +163,9 @@ bool queen::eat(int col_from, int row_from, int col_to, int row_to, piece* (&boa
     }
     else
     {
-
+        delete board[row_to][col_to];
+        board[row_to][col_to] = nullptr;
+        std::cout << "\nkilled!" << std::endl;
         move(col_from, row_from, col_to, row_to, board);
     }
 
@@ -171,8 +173,7 @@ bool queen::eat(int col_from, int row_from, int col_to, int row_to, piece* (&boa
 }
 void queen::move(int col_from, int row_from, int col_to, int row_to, piece* (&board)[8][8])
 {
-    delete board[row_to][col_to];
-    printf("\nkilled!\n");
+    
     board[row_to][col_to] = board[row_from][col_from];
     board[row_from][col_from] = nullptr;
 }
